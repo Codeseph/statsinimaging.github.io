@@ -257,12 +257,6 @@ box-shadow: 10px 5px 5px grey;
 }
 
  @include media-query($on-palm) {
-    position: absolute;
-    top: 9px;
-    right: $spacing-unit / 2;
-    background-color: $background-color;
-    border: 1px solid $grey-color-light;
-    border-radius: 5px;
     text-align: right;
 
     label[for="nav-trigger"] {
@@ -310,3 +304,13 @@ input:checked ~ .trigger {
   }
 }
 
+.nav-elements {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  // When screen is small enough, change to column display
+  @include media-query($on-palm) {
+    flex-direction: column;
+  }
+}
